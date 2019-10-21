@@ -6,6 +6,7 @@ clear all
 nodes = [ 0 0; 1 2.75; 2 0; 3 2.75; 4 0;] %moje
 % nodes = [4, 0; 6, 2; 6, 6; 0, 4; 4, 4]; % michala
 
+
 % Macierz elementów prêtowych
 % podaj¹c numery wêz³ów jako parê np. [ 1 2; 1 3; .. ]
 elements_nodes = [ 1 2; 1 3; 2 3; 2 4; 3 4; 3 5; 4 5;] % moja
@@ -13,7 +14,7 @@ elements_nodes = [ 1 2; 1 3; 2 3; 2 4; 3 4; 3 5; 4 5;] % moja
 
 % Macierz obci¹¿eñ w wêz³ach w kolejnoœæi [ Px1 Py1 Px2 Py2 ... ]
 P = zeros(2*length(nodes),1);
-P(8) = -10^6; %[N]
+P(6) = -10^6; %[N]
 
 % Podpory oraz kierunek podpory dla 1: x+y, 2: y (pozioma), 3: x (pionowa)
 % format: [wezel, typ; wezel, typ;]
@@ -32,6 +33,7 @@ A = 0.00025; %[m^2] przekrój prêta
 [elements, local_stiffness, local_stiffness_in_global, local_stiffness_in_global_2, global_stiffness] = calculate_truss_elements(nodes, elements_nodes, A, E, ro);
 global_stiffness_2 = global_stiffness; % kopia pelnej macierzy
 
+elements
 % Uwzglêdnianie warunków brzegowych !
 global_stiffness = apply_bounduary_conditions(global_stiffness, supports);
 
@@ -49,4 +51,6 @@ new_nodes = nodes + u_cords;
 % Wykreœlenie wyników
 plot_truss(nodes, elements_nodes, 'b');
 plot_truss(new_nodes, elements_nodes, 'r');
-grid on;
+
+
+plot_truss2(nodes, new_nodes, elements_nodes, ['b','r']);
