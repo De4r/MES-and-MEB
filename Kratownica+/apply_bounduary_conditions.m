@@ -1,5 +1,10 @@
 function global_stiffness = apply_bounduary_conditions(global_stiffness, supports)
-%funkcja nak³adaj¹ca warunki brzegowe na macierz sztywnoœci
+% Funkcja nak³adaj¹ca warunki brzegowe na macierz sztywnoœci wed³ug regu³y
+% podanej w pliku kratownica -> MODYFIKACJ MACIERZY SZTYWNOSCI
+% Podpory oraz kierunek podpory definowane w parach liczb
+% Opcje: 1: x+y (nieprzesuwna), 2: y (pozioma przesuwna), 3: x (pionowa przesuwna)
+% format: [wezel, typ; wezel, typ; ...]
+
 for i=1:size(supports,1)
     temp_index = 2*supports(i,1)-1;
     if supports(i,2) == 1
