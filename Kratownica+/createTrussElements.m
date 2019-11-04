@@ -66,6 +66,7 @@ localMassMatrixInGlobalCoord = localMass;
     localMass(3,1,i) = 1; localMass(4,2,i) = 1;
     localMass(:,:,i) = localMass(:,:,i) * elements(i,7) *...
         elements(i,9) * elements(i,6) / 6;
+    % ponizsza czynnosc nie jest potrzebna bo nie zmienia macierzy
     localMassMatrixInGlobalCoord(:,:,i) = localDC(:,:,i)' *...
         localMass(:,:,i) * localDC(:,:,i);
     

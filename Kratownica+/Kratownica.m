@@ -77,7 +77,7 @@ end
 
 
 % Obliczenia dynamiczne, wyznaczenie czêstotliwoœci drgañ w³asnych
-[rightEigenVerctors, eigenValeus] = eig(globalStiffnes, globalMass);
+[rightEigenVectors, eigenValeus] = eig(globalStiffnes, globalMass);
 disp('Czêstotliwosci drgan w³asnych:');
 modalFrequencies = sqrt(diag(eigenValeus)) / ( 2* pi)
 
@@ -112,4 +112,8 @@ if savePlots == 'y'
             plotTrussHighResolution(nodes, newNodes, elementsNodes, ['b','r'], figureNumber, modalFrequencies(i), num2str(modalShapeNumber));
         end
     end
+end
+
+for i=1:size(localMassMatrixInGlobalCoordAllNodes,3)
+    latexMatrixPrint(localMassMatrixInGlobalCoordAllNodes(:,:,i), 3, 'filename.txt')
 end
