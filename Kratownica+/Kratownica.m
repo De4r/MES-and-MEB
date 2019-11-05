@@ -81,12 +81,19 @@ end
 disp('Czêstotliwosci drgan w³asnych:');
 modalFrequencies = sqrt(diag(eigenValeus)) / ( 2* pi)
 
+% Normalizacja wektorów w³asny M-ortogonalnie
+for i=1:size(rightEigenVectors,2)
+   rightEigenVectorsNormalized = rightEigenVectors / real((sqrt(...
+       rightEigenVectors'*globalMass*rightEigenVectors)));
+end
+
 % Wyrkesy postaci drgan kratownicy
 modalShapeNumber = 0;
 for i=1:length(modalFrequencies)
     if eigenValeus(i,i) ~= 1
         figureNumber = figureNumber + 1;
-        u = rightEigenVerctors(:,i);
+        %u = rightEigenVectors(:,i);
+        u = rightEigenVectorsNormalized(:,i);
         for j=1:size(uCoords, 1)
             uCoords(j, 1) = u(2*j-1);
             uCoords(j, 2) = u(2*j);
@@ -103,7 +110,7 @@ if savePlots == 'y'
         if eigenValeus(i,i) ~= 1
             figureNumber = figureNumber + 1;
             modalShapeNumber = modalShapeNumber + 1;
-            u = rightEigenVerctors(:,i);
+            u = rightEigenVectors(:,i);
             for j=1:size(uCoords, 1)
                 uCoords(j, 1) = u(2*j-1);
                 uCoords(j, 2) = u(2*j);
@@ -114,6 +121,8 @@ if savePlots == 'y'
     end
 end
 
-for i=1:size(localMassMatrixInGlobalCoordAllNodes,3)
-    latexMatrixPrint(localMassMatrixInGlobalCoordAllNodes(:,:,i), 3, 'filename.txt')
-end
+
+
+% for i=1:size(localMassMatrixInGlobalCoordAllNodes,3)
+%     latexMatrixPrint(localMassMatrixInGlobalCoordAllNodes(:,:,i), 3, 'filename.txt')
+% end
