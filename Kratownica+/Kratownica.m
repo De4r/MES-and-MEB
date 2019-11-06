@@ -22,7 +22,7 @@ savePlots = 'n' % y/n
 nodes = [ 0 0; 1 2.75; 2 0; 3 2.75; 4 0;]
 elementsNodes = [ 1 2; 1 3; 2 3; 2 4; 3 4; 3 5; 4 5;] % moja
 P = zeros(2*length(nodes),1);
-P(6) = -10^6; %[N]
+P(6) = -1000000; %[N]
 supportsDefinitions = [1, 1; 5, 2];
 
 
@@ -59,6 +59,7 @@ for i=1:size(uCoords, 1)
    uCoords(i, 1) = u(2*i-1);
    uCoords(i, 2) = u(2*i);
 end
+uCoordsStatic=uCoords
 % Dodanie przemieszczeñ wêz³owych do wspó³rzêdnych wêz³ów
 newNodes = nodes + uCoords;
 

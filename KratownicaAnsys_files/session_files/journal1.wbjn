@@ -1,0 +1,103 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="Structural Steel")
+matlProp1 = material1.GetProperty(Name="Tensile Yield Strength")
+matlProp1.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["335000000 [Pa]"]])
+matlProp2 = material1.GetProperty(Name="Compressive Yield Strength")
+matlProp2.SetData(
+    Variables=["Compressive Yield Strength"],
+    Values=[["3.35 [Pa]"]])
+matlProp2.SetData(
+    Variables=["Compressive Yield Strength"],
+    Values=[["33500000 [Pa]"]])
+matlProp2.SetData(
+    Variables=["Compressive Yield Strength"],
+    Values=[["335000000 [Pa]"]])
+matlProp3 = material1.GetProperty(Name="Tensile Ultimate Strength")
+matlProp3.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["55000000 [Pa]"]])
+matlProp3.SetData(
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["550000000 [Pa]"]])
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+Save(Overwrite=True)
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Exit()
+model1.Edit()
+model1.Exit()
+matlProp4 = material1.GetProperty(Name="Elasticity")
+matlProp4.SetData(
+    Variables=["Young's Modulus"],
+    Values=[["1900000000000 [Pa]"]])
+modelComponent1.Refresh()
+model1.Edit()
+model1.Exit()
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+model1.Exit()
+matlProp4.SetData(
+    Variables=["Young's Modulus"],
+    Values=[["190000000000 [Pa]"]])
+modelComponent1.Refresh()
+model1.Edit()
+model1.Exit()
+geometry1.Edit()
+geometry1.Exit()
+modelComponent1.Refresh()
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+setup1 = system1.GetContainer(ComponentName="Setup")
+setup1.Edit()
+Save(Overwrite=True)
+model1.Exit()
+template2 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+engineeringDataComponent1 = system1.GetComponent(Name="Engineering Data")
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+system2 = template2.CreateSystem(
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1, modelComponent1],
+    Position="Right",
+    RelativeTo=system1)
+modelComponent1.Refresh()
+setupComponent2 = system2.GetComponent(Name="Setup")
+setupComponent2.Refresh()
+setup2 = system2.GetContainer(ComponentName="Setup")
+setup2.Edit()
+model1.Exit()
+setup1.Edit()
+model1.Exit()
+favorites1 = EngData.LoadFavoriteItems()
+library1 = EngData.OpenLibrary(
+    Name="General Materials",
+    Source="General_Materials.xml")
+matlProp5 = material1.GetProperty(Name="Coefficient of Thermal Expansion")
+matlProp5.SetData(
+    SheetName="Coefficient of Thermal Expansion",
+    SheetQualifiers={"Definition": "Secant", "Behavior": "Isotropic"},
+    Variables=["Coefficient of Thermal Expansion"],
+    Values=[["1.3 [C^-1]"]])
+fieldVariable1 = GetDataEntity("/Engineering Data/FieldVariableDataObject:Temperature 3")
+fieldVariable1.DataString = "20 [C]"
+modelComponent1.Refresh()
+model1.Edit()
+model1.Exit()
+setup1.Edit()
+model1.Exit()
+setup2.Edit()
+Save(Overwrite=True)
+model1.Exit()
+Save(Overwrite=True)

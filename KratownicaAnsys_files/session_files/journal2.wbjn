@@ -1,0 +1,18 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="SYS")
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+Save(Overwrite=True)
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Exit()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+model1.Edit()
+Save(Overwrite=True)
+model1.Exit()
+results1.Edit()
+model1.Exit()
+Save(Overwrite=True)
