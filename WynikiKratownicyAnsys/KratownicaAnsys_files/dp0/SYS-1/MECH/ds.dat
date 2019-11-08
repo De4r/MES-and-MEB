@@ -2,14 +2,14 @@
 /config,noeldb,1     ! force off writing results to database
 *get,_wallstrt,active,,time,wall
 ! ANSYS input file written by Workbench version 2019 R3
-! File used for geometry attach: D:\Studia\MES and MEB\KratownicaAnsys_files\dp0\SYS\DM\SYS.agdb
-/title,KratownicaAnsys--Modal (B5)
+! File used for geometry attach: D:\Studia\MES and MEB\WynikiKratownicyAnsys\KratownicaAnsys_files\dp0\SYS\DM\SYS.agdb
+/title,KratownicaAnsys--Analiza modalna z utwierdzeniami (B5)
 *DIM,_wb_ProjectScratch_dir,string,248
-_wb_ProjectScratch_dir(1) = 'D:\Studia\MES and MEB\_ProjectScratch\ScrA497\'
+_wb_ProjectScratch_dir(1) = 'D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr02D5\'
 *DIM,_wb_SolverFiles_dir,string,248
-_wb_SolverFiles_dir(1) = 'D:\Studia\MES and MEB\KratownicaAnsys_files\dp0\SYS-1\MECH\'
+_wb_SolverFiles_dir(1) = 'D:\Studia\MES and MEB\WynikiKratownicyAnsys\KratownicaAnsys_files\dp0\SYS-1\MECH\'
 *DIM,_wb_userfiles_dir,string,248
-_wb_userfiles_dir(1) = 'D:\Studia\MES and MEB\KratownicaAnsys_files\user_files\'
+_wb_userfiles_dir(1) = 'D:\Studia\MES and MEB\WynikiKratownicyAnsys\KratownicaAnsys_files\user_files\'
 /com,--- Data in consistent MKS units. See Solving Units in the help system for more information.
 /units,MKS
 /nopr
@@ -75,6 +75,28 @@ SECTYPE,1,BEAM,CSOL
 SECDATA,8.92e-003
 secoffset,cent
 
+! ****** Begin Command Snippet ******
+*dim,matids,,1
+*set,matids(1),1
+*set,matid,1
+*dim,typeids,,1
+*set,typeids(1),1
+!   Commands inserted into this file will be executed just after material definitions in /PREP7.
+!   The material number for this body is equal to the parameter "matid" if it's not a part of a Material Assignment.
+!   The element type numbers for this body can be referenced using the 1-D array parameter "typeids".
+
+!   Active UNIT system in Workbench when this object was created:  Metric (m, kg, N, s, V, A)
+!   NOTE:  Any data that requires units (such as mass) is assumed to be in the consistent solver unit system.
+!                See Solving Units in the help system for more information.
+
+
+*get,myarea,SECP,matid,PROP,AREA
+ET,matid,180
+SECTYPE,matid,LINK
+SECDATA,myarea
+*set, matids, ,
+*set, typeids, ,
+! ****** End   Command Snippet ******
 !************************* Model Summary ********************
 !Line Body,	Structural Steel,	matid,	1
 !************************* End Model Summary ********************

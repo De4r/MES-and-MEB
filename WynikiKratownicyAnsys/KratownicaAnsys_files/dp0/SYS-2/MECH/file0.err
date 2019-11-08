@@ -1,0 +1,12 @@
+/COM,ANSYS RELEASE 2019 R3           BUILD 19.5      UP20190805       11:48:50
+
+ *** WARNING ***                         CP =       0.969   TIME= 11:48:51
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       0.969   TIME= 11:48:51
+ No constraints have been defined using the D command.                   
+
+ *** WARNING ***                         CP =       3.922   TIME= 11:48:54
+ Fewer modes than the requested number of modes ( 10 ) were computed.    
+ The range specified (FREQB= 90, FREQE= 800) contains only 7 modes.      

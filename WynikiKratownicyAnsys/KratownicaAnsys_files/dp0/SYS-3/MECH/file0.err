@@ -1,0 +1,19 @@
+/COM,ANSYS RELEASE 2019 R3           BUILD 19.5      UP20190805       11:49:10
+
+ *** WARNING ***                         CP =       0.844   TIME= 11:49:11
+ Material number 2 (used by element 8) should normally have at least one 
+ MP or one TB type command associated with it.  Output of energy by      
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       1.250   TIME= 11:49:12
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       1.250   TIME= 11:49:12
+ Material number 2 (used by element 8) should normally have at least one 
+ MP or one TB type command associated with it.  Output of energy by      
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       1.500   TIME= 11:49:12
+ The requested number of modes is reduced from 15 to 7 since there are   
+ only 7 degrees of freedom in the model.                                 

@@ -1,0 +1,30 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+system1 = GetSystem(Name="SYS 2")
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+system2 = GetSystem(Name="SYS")
+solutionComponent1 = system2.GetComponent(Name="Solution")
+setupComponent1 = system1.GetComponent(Name="Setup")
+solutionComponent1.DeleteTransfer(TargetComponent=setupComponent1)
+template1 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system3 = GetSystem(Name="SYS 1")
+engineeringDataComponent1 = system3.GetComponent(Name="Engineering Data")
+geometryComponent1 = system3.GetComponent(Name="Geometry")
+modelComponent1 = system3.GetComponent(Name="Model")
+system4 = template1.CreateSystem(
+    Name="",
+    ComponentsToShare=[engineeringDataComponent1, geometryComponent1, modelComponent1],
+    Position="Right",
+    RelativeTo=system3)
+setupComponent2 = system4.GetComponent(Name="Setup")
+solutionComponent1.TransferData(TargetComponent=setupComponent2)
+Save(Overwrite=True)
+Save(Overwrite=True)
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Exit()
+Save(Overwrite=True)
+Save(Overwrite=True)

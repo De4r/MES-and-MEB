@@ -73,13 +73,13 @@
        4 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
     TOTAL OF     4 CORES REQUESTED
   DESIGNXPLORER REQUESTED
-  INPUT FILE NAME              = D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2\dummy.dat
-  OUTPUT FILE NAME             = D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2\solve.out
+  INPUT FILE NAME              = D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1\dummy.dat
+  OUTPUT FILE NAME             = D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1\solve.out
   START-UP FILE MODE           = NOREAD
   STOP FILE MODE               = NOREAD
 
  RELEASE= 2019 R3              BUILD= 19.5      UP20190805   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  16:24:31  NOV 06, 2019 CP=      0.500
+ CURRENT JOBNAME=file0  11:45:50  NOV 08, 2019 CP=      0.406
 
 
  PARAMETER _DS_PROGRESS =     999.0000000    
@@ -88,11 +88,11 @@
 
 
 
- *** NOTE ***                            CP =       0.938   TIME= 16:24:32
+ *** NOTE ***                            CP =       0.797   TIME= 11:45:50
  The /CONFIG,NOELDB command is not valid in a Distributed ANSYS          
  solution.  Command is ignored.                                          
 
- *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.4088889    
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  11.7638889    
 
  TITLE= 
  KratownicaAnsys--Static Structural (A5)                                       
@@ -101,17 +101,17 @@
  SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_PROJECTSCRATCH_DIR(1) = D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2\
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1\
 
  SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_SOLVERFILES_DIR(1) = D:\Studia\MES and MEB\KratownicaAnsys_files\dp0\SYS\MECH\
+ PARAMETER _WB_SOLVERFILES_DIR(1) = D:\Studia\MES and MEB\WynikiKratownicyAnsys\KratownicaAnsys_files\dp0\SYS\MECH\
 
  SET PARAMETER DIMENSIONS ON  _WB_USERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_USERFILES_DIR(1) = D:\Studia\MES and MEB\KratownicaAnsys_files\user_files\
+ PARAMETER _WB_USERFILES_DIR(1) = D:\Studia\MES and MEB\WynikiKratownicyAnsys\KratownicaAnsys_files\user_files\
  --- Data in consistent MKS units. See Solving Units in the help system for more
 
  MKS UNITS SPECIFIED FOR INTERNAL    
@@ -139,7 +139,7 @@
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
  DISTRIBUTED ANSYS Academic Teaching Introductory              
 
- 01055371  VERSION=WINDOWS x64   16:24:32  NOV 06, 2019 CP=      0.938
+ 01055371  VERSION=WINDOWS x64   11:45:50  NOV 08, 2019 CP=      0.797
 
  KratownicaAnsys--Static Structural (A5)                                       
 
@@ -152,13 +152,17 @@
  *********** Set Reference Temperature ***********
  *********** Send Materials ***********
  *********** Send Beam Properties ***********
+ *********** Create Displacement Components For Use In Future MSUP Analysis ****
+ *********** Create Displacement Components For Use In Future MSUP Analysis ****
+ *********** Create Displacement Components For Use In Future MSUP Analysis ****
+ *********** Create Displacement Components For Use In Future MSUP Analysis ****
  *********** Fixed Supports ***********
  ******* Constant Zero Displacement Y *******
  ******* Constant Zero Displacement Z *******
  *********** Define Vertex Force Using Follower Elements ***********
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.000
+ ***** ROUTINE COMPLETED *****  CP =         0.859
 
 
  --- Number of total nodes = 12
@@ -169,7 +173,7 @@
  --- Number of condensed parts = 0
  --- Number of total elements = 10
 
- *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.4088889    
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  11.7638889    
  ****************************************************************************
  *************************    SOLUTION       ********************************
  ****************************************************************************
@@ -186,14 +190,14 @@
 
  CONTACT INFORMATION PRINTOUT LEVEL       1
 
- DO NOT COMBINE ELEMENT MATRIX FILES (.emat) AFTER DISTRIBUTED PARALLEL SOLUTION
-
- DO NOT COMBINE ELEMENT SAVE DATA FILES (.esav) AFTER DISTRIBUTED PARALLEL SOLUTION
-
  NLDIAG: Nonlinear diagnostics CONT option is set to ON. 
          Writing frequency : each ITERATION.
 
- DO NOT SAVE ANY RESTART FILES AT ALL
+ DEFINE RESTART CONTROL FOR LOADSTEP LAST
+ AT FREQUENCY OF LAST AND NUMBER FOR OVERWRITE IS    0
+
+ WRITE MULTIFRAME RESTART FILES EVEN
+ WHEN IT IS A LINEAR STATIC ANALYSIS
  ****************************************************
  ******************* SOLVE FOR LS 1 OF 1 ****************
 
@@ -280,36 +284,26 @@
 
  *ENDIF
 
- *** NOTE ***                            CP =       1.125   TIME= 16:24:32
+ *** NOTE ***                            CP =       1.016   TIME= 11:45:50
  The automatic domain decomposition logic has selected the MESH domain   
  decomposition method with 4 processes per solution.                     
 
  *****  ANSYS SOLVE    COMMAND  *****
 
- *** WARNING ***                         CP =       1.125   TIME= 16:24:32
+ *** WARNING ***                         CP =       1.016   TIME= 11:45:50
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** NOTE ***                            CP =       1.172   TIME= 16:24:32
+ *** NOTE ***                            CP =       1.016   TIME= 11:45:50
  The model data was checked and warning messages were found.             
   Please review output or errors file ( D:\Studia\MES and                
- MEB\_ProjectScratch\ScrE5A2\file0.err ) for these warning messages.     
-
- *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
-      --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
-
- ELEMENT TYPE    1 IS BEAM188 . KEYOPT(3) IS ALREADY SET AS SUGGESTED AND NO
- RESETTING IS NEEDED.
-
- ELEMENT TYPE    1 IS BEAM188 . KEYOPT(15) IS ALREADY SET AS SUGGESTED AND NO
- RESETTING IS NEEDED.
-
-
+ MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1\file0.err ) for       
+ these warning messages.                                                 
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
  DISTRIBUTED ANSYS Academic Teaching Introductory              
 
- 01055371  VERSION=WINDOWS x64   16:24:32  NOV 06, 2019 CP=      1.172
+ 01055371  VERSION=WINDOWS x64   11:45:50  NOV 08, 2019 CP=      1.016
 
  KratownicaAnsys--Static Structural (A5)                                       
 
@@ -318,33 +312,29 @@
                        S O L U T I O N   O P T I O N S
 
    PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
-   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    OFFSET TEMPERATURE FROM ABSOLUTE ZERO . . . . .  273.15    
    EQUATION SOLVER OPTION. . . . . . . . . . . . .SPARSE             
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
 
- *** WARNING ***                         CP =       1.172   TIME= 16:24:32
+ *** WARNING ***                         CP =       1.016   TIME= 11:45:50
  Material number 2 (used by element 8) should normally have at least one 
  MP or one TB type command associated with it.  Output of energy by      
  material may not be available.                                          
 
- *** NOTE ***                            CP =       1.219   TIME= 16:24:32
+ *** NOTE ***                            CP =       1.016   TIME= 11:45:50
  The step data was checked and warning messages were found.              
   Please review output or errors file ( D:\Studia\MES and                
- MEB\_ProjectScratch\ScrE5A2\file0.err ) for these warning messages.     
-
- *** NOTE ***                            CP =       1.219   TIME= 16:24:32
- Internal nodes from 13 to 19 are created.                               
- 7 internal nodes are used for quadratic and/or cubic options of         
- BEAM188, PIPE288, and/or SHELL208.                                      
+ MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1\file0.err ) for       
+ these warning messages.                                                 
 
   
   
      D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
   
   ...Number of elements: 10
-  ...Number of nodes:    19
+  ...Number of nodes:    12
   ...Decompose to 4 CPU domains
   ...Element load balance ratio =     1.500
 
@@ -373,21 +363,16 @@
 
  SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
 
- *** NOTE ***                            CP =       1.641   TIME= 16:24:32
- Predictor is ON by default for structural elements with rotational      
- degrees of freedom.  Use the PRED,OFF command to turn the predictor     
- OFF if it adversely affects the convergence.                            
 
-
- *** WARNING ***                         CP =       1.859   TIME= 16:24:32
+ *** WARNING ***                         CP =       1.609   TIME= 11:45:51
  A boundary condition has been applied on 1 degrees of freedom of the    
  node belonging to the FOLLW201 element number 9.                        
 
- *** WARNING ***                         CP =       1.859   TIME= 16:24:32
+ *** WARNING ***                         CP =       1.609   TIME= 11:45:51
  A boundary condition has been applied on 1 degrees of freedom of the    
  node belonging to the FOLLW201 element number 10.                       
 
- *** WARNING ***                         CP =       1.859   TIME= 16:24:32
+ *** WARNING ***                         CP =       1.609   TIME= 11:45:51
  A boundary condition has been applied on 1 degrees of freedom of the    
  node belonging to the FOLLW201 element number 8.                        
 
@@ -401,9 +386,9 @@
          0.0000        0.0000        34.714     |     42.339       -69.427        0.0000    
      ------------------------------------------ | ------------------------------------------
                                                 |         Rotational mass (inertia)
-                                                |     87.508       -84.679        0.0000    
-                                                |    -84.679        181.22       0.60875E-21
-                                                |    0.94040E-37   0.60875E-21    268.73    
+                                                |     87.507       -84.679        0.0000    
+                                                |    -84.679        181.22        0.0000    
+                                                |     0.0000        0.0000        268.73    
 
    TOTAL MASS =  34.714    
      The mass principal axes coincide with the global Cartesian axes
@@ -411,9 +396,9 @@
    CENTER OF MASS (X,Y,Z)=    2.0000        1.2197        0.0000    
 
    TOTAL INERTIA ABOUT CENTER OF MASS
-         35.868      -0.32374E-13    0.0000    
-       -0.32374E-13    42.364       0.60875E-21
-         0.0000       0.60875E-21    78.231    
+         35.867      -0.70672E-14    0.0000    
+       -0.70672E-14    42.363        0.0000    
+         0.0000        0.0000        78.230    
      The inertia principal axes coincide with the global Cartesian axes
 
 
@@ -423,51 +408,54 @@
      1   34.7136    
 
  Range of element maximum matrix coefficients in global coordinates
- Maximum = 126550473 at element 1.                                       
- Minimum = 79112790.9 at element 5.                                      
+ Maximum = 23728213.8 at element 1.                                      
+ Minimum = 14323843 at element 3.                                        
 
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1         7  BEAM188       0.000   0.000000
+        1         7  LINK180       0.047   0.006696
         2         3  CLOAD201      0.000   0.000000
- Time at end of element matrix formulation CP = 1.875.                   
+ Time at end of element matrix formulation CP = 1.625.                   
+
+ ALL CURRENT ANSYS DATA WRITTEN TO FILE NAME= file.rdb
+  FOR POSSIBLE RESUME FROM THIS POINT
 
  DISTRIBUTED SPARSE MATRIX DIRECT SOLVER.
-  Number of equations =          61,    Maximum wavefront =     12
+  Number of equations =           7,    Maximum wavefront =      3
 
-  Local memory allocated for solver              =      0.320 MB
-  Local memory required for in-core solution     =      0.278 MB
-  Local memory required for out-of-core solution =      0.278 MB
+  Local memory allocated for solver              =      0.302 MB
+  Local memory required for in-core solution     =      0.262 MB
+  Local memory required for out-of-core solution =      0.262 MB
 
-  Total memory allocated for solver              =      1.271 MB
-  Total memory required for in-core solution     =      1.103 MB
-  Total memory required for out-of-core solution =      1.103 MB
+  Total memory allocated for solver              =      1.208 MB
+  Total memory required for in-core solution     =      1.047 MB
+  Total memory required for out-of-core solution =      1.047 MB
 
- *** NOTE ***                            CP =       2.234   TIME= 16:24:33
+ *** NOTE ***                            CP =       1.812   TIME= 11:45:51
  The Distributed Sparse Matrix Solver is currently running in the        
  in-core memory mode.  This memory mode uses the most amount of memory   
  in order to avoid using the hard drive as much as possible, which most  
  often results in the fastest solution time.  This mode is recommended   
  if enough physical memory is present to accommodate all of the solver   
  data.                                                                   
- curEqn=     23  totEqn=     23 Job CP sec=      2.500
-      Factor Done= 100% Factor Wall sec=      0.110 rate=       0.0 Mflops
- Distributed sparse solver maximum pivot= 28649205.4 at node 1 UY.       
- Distributed sparse solver minimum pivot= 1529.68836 at node 4 ROTX.     
- Distributed sparse solver minimum pivot in absolute value= 1529.68836   
- at node 4 ROTX.                                                         
+ curEqn=      2  totEqn=      2 Job CP sec=      1.875
+      Factor Done= 100% Factor Wall sec=      0.000 rate=       0.0 Mflops
+ Distributed sparse solver maximum pivot= 28647686 at node 1 UY.         
+ Distributed sparse solver minimum pivot= 5924055.45 at node 3 UX.       
+ Distributed sparse solver minimum pivot in absolute value= 5924055.45   
+ at node 3 UX.                                                           
 
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1         7  BEAM188       0.000   0.000000
+        1         7  LINK180       0.016   0.002232
         2         3  CLOAD201      0.000   0.000000
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1         7  BEAM188       0.000   0.000000
+        1         7  LINK180       0.000   0.000000
         2         3  CLOAD201      0.000   0.000000
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
@@ -485,21 +473,21 @@
  ****************************************************
  *************** FINISHED SOLVE FOR LS 1 *************
 
- *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.4094444    
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  11.7641667    
 
  PRINTOUT RESUMED BY /GOP
 
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         3.281
+ ***** ROUTINE COMPLETED *****  CP =         2.656
 
 
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2019 R3          19.5     ***
  DISTRIBUTED ANSYS Academic Teaching Introductory              
 
- 01055371  VERSION=WINDOWS x64   16:24:34  NOV 06, 2019 CP=      3.297
+ 01055371  VERSION=WINDOWS x64   11:45:52  NOV 08, 2019 CP=      2.672
 
  KratownicaAnsys--Static Structural (A5)                                       
 
@@ -507,7 +495,7 @@
 
           ***** ANSYS RESULTS INTERPRETATION (POST1) *****
 
- *** NOTE ***                            CP =       3.297   TIME= 16:24:34
+ *** NOTE ***                            CP =       2.672   TIME= 11:45:52
  Reading results into the database (SET command) will update the current 
  displacement and force boundary conditions in the database with the     
  values from the results file for that load set.  Note that any          
@@ -525,29 +513,29 @@
  EXIT THE ANSYS POST1 DATABASE PROCESSOR
 
 
- ***** ROUTINE COMPLETED *****  CP =         3.297
+ ***** ROUTINE COMPLETED *****  CP =         2.672
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  16.4094444    
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  11.7644444    
 
  PARAMETER _PREPTIME =     0.000000000    
 
- PARAMETER _SOLVTIME =     2.000000000    
+ PARAMETER _SOLVTIME =     1.000000000    
 
- PARAMETER _POSTTIME =     0.000000000    
+ PARAMETER _POSTTIME =     1.000000000    
 
  PARAMETER _TOTALTIM =     2.000000000    
 
  *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  1.50000000    
 
- *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.174906800    
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.366943300    
  --- Number of total nodes = 12
  --- Number of total elements = 10
  --- Element load balance ratio = 1.5
- --- Time to combine distributed files = 0.1749068
+ --- Time to combine distributed files = 0.3669433
 
  EXIT ANSYS WITHOUT SAVING DATABASE
 
@@ -558,7 +546,7 @@
 +--------- D I S T R I B U T E D   A N S Y S   S T A T I S T I C S ------------+
 
 Release: 2019 R3            Build: 19.5       Update: UP20190805   Platform: WINDOWS x64 
-Date Run: 11/06/2019   Time: 16:24     Process ID: 8456
+Date Run: 11/08/2019   Time: 11:45     Process ID: 14080
 Operating System: Windows 10  (Build: 18362)
 
 Processor Model: Intel(R) Core(TM) i7-4720HQ CPU @ 2.60GHz
@@ -584,26 +572,26 @@ Input File: dummy.dat
 
   Core                Machine Name   Working Directory
  -----------------------------------------------------
-     0                     Mateusz   D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2
-     1                     Mateusz   D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2
-     2                     Mateusz   D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2
-     3                     Mateusz   D:\Studia\MES and MEB\_ProjectScratch\ScrE5A2
+     0                     Mateusz   D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1
+     1                     Mateusz   D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1
+     2                     Mateusz   D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1
+     3                     Mateusz   D:\Studia\MES and MEB\WynikiKratownicyAnsys\_ProjectScratch\Scr6CA1
  
-Latency time from master to core     1 =   52.372 microseconds
-Latency time from master to core     2 =    1.796 microseconds
-Latency time from master to core     3 =    5.894 microseconds
+Latency time from master to core     1 =    1.553 microseconds
+Latency time from master to core     2 =    1.373 microseconds
+Latency time from master to core     3 =   28.426 microseconds
  
-Communication speed from master to core     1 =   348.86 MB/sec
-Communication speed from master to core     2 =  3705.57 MB/sec
-Communication speed from master to core     3 =  2926.32 MB/sec
+Communication speed from master to core     1 =   435.04 MB/sec
+Communication speed from master to core     2 =  4051.37 MB/sec
+Communication speed from master to core     3 =  3846.73 MB/sec
 
-Total CPU time for main thread                    :        3.1 seconds
-Total CPU time summed for all threads             :        3.8 seconds
+Total CPU time for main thread                    :        2.5 seconds
+Total CPU time summed for all threads             :        3.1 seconds
 
 Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
-Elapsed time spent solution - preprocessing       :        0.3 seconds
-Elapsed time spent computing solution             :        1.4 seconds
-Elapsed time spent solution - postprocessing      :        0.2 seconds
+Elapsed time spent solution - preprocessing       :        0.2 seconds
+Elapsed time spent computing solution             :        0.9 seconds
+Elapsed time spent solution - postprocessing      :        0.4 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
  
 Equation solver used                              :            Sparse (symmetric)
@@ -635,7 +623,7 @@ Total amount of I/O read from disk                :        0.0 GB
  |                                                                           |
  |---------------------------------------------------------------------------|
  |                                                                           |
- |        CP Time      (sec) =          3.797       Time  =  16:24:34        |
- |        Elapsed Time (sec) =          5.000       Date  =  11/06/2019      |
+ |        CP Time      (sec) =          3.141       Time  =  11:45:52        |
+ |        Elapsed Time (sec) =          4.000       Date  =  11/08/2019      |
  |                                                                           |
  *---------------------------------------------------------------------------*
