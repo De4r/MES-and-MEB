@@ -13,7 +13,7 @@ print(df.head)
 fig = plt.figure()
 
 for col in df.columns[1::]:
-    ax = plt.plot(df[df.columns[0]], df[col], label = col)
+    ax = plt.plot(df[df.columns[0]], df[col], label=col)
 
 plt.grid()
 plt.title('Wstępny pomiar, U=11,7[V], A=13[A]')
