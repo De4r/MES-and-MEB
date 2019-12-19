@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import csv
 
-filename ='19-12-2019_10_22_24_LOGS_DS18B20_pomiar1.csv'
+filename = '19-12-2019_10_22_24_LOGS_DS18B20_pomiar1.csv'
 # filename ='19-12-2019_11_07_39_LOGS_DS18B20_pomiar2.csv'
 
 df = pd.read_csv(filename)
@@ -36,14 +36,17 @@ df['dT'] = df[cols[0]] - df[cols[-1]]
 ax1 = plt.plot(df[df.columns[0]], df[df.columns[-1]], label=df.columns[-1])
 
 # wykres usrednionego przebgiegu T_c
-ax1 = plt.plot(df[df.columns[0]], df[df.columns[-2]].rolling(window=20, center=True, min_periods=1).mean(), label='Srednia T_c')
+ax1 = plt.plot(df[df.columns[0]], df[df.columns[-2]].rolling(window=20,
+                                                             center=True, min_periods=1).mean(), label='Srednia T_c')
 
 # obliczenie przebiegu T_h - T_c.srednia
-df['dT'] = df[cols[0]] - df[cols[-1]].rolling(window=20, center=True, min_periods=1).mean()
+df['dT'] = df[cols[0]] - df[cols[-1]
+                            ].rolling(window=20, center=True, min_periods=1).mean()
 
 ax1 = plt.plot(df[df.columns[0]], df[df.columns[-1]], label='dT=T_h-MA(T_c)')
 
-ax1 = plt.plot(df[df.columns[0]], df[df.columns[-1]].rolling(window=20, center=True, min_periods=1).mean(), label='dT=MA(dT T_h-MA(T_c))')
+ax1 = plt.plot(df[df.columns[0]], df[df.columns[-1]].rolling(window=20,
+                                                             center=True, min_periods=1).mean(), label='dT=MA(dT T_h-MA(T_c))')
 
 plt.title('Przebieg czasowy tempratury moduly peltiera')
 plt.xlabel('Czas [s]')

@@ -31,7 +31,7 @@ class serialRead():
         self.path = f'{now.strftime("%d-%m-%Y_%H_%M_%S")}_LOGS_{self.sensor}.csv'
         self.header = ['Time']
         self.fig = plt.figure()
-        self.ax1 = self.fig.add_subplot(1,1,1)
+        self.ax1 = self.fig.add_subplot(1, 1, 1)
         self.ax1.set_xlabel('Czas [s]')
         self.ax1.set_ylabel('Temperatura [st. C]')
         plt.grid()
@@ -42,7 +42,8 @@ class serialRead():
             self.header.append(f'T_{i}')
         self.header.append('T_ot')
         self.header.append('T_c')
-        print(f'Ustawiono: {self.baud_rate}, {self.serial_port}, {self.sensor}, {self.sen_num}')
+        print(
+            f'Ustawiono: {self.baud_rate}, {self.serial_port}, {self.sensor}, {self.sen_num}')
         print(self.header)
 
     def plot_now(self):
@@ -53,7 +54,6 @@ class serialRead():
         plt.draw()
         plt.pause(0.001)
 
-    
     def start(self):
         ser = serial.Serial()
         ser.baudrate = self.baud_rate
