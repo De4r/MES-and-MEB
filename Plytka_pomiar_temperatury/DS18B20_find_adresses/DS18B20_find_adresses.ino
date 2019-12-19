@@ -19,7 +19,7 @@ void setup()
 {
   // Otwarcie portu szeregowego
   while(!Serial);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop()
