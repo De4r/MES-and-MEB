@@ -1,17 +1,15 @@
 import datetime
-import os
 import csv
 import serial
 import time
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 from matplotlib import style
 import pandas as pd
 
 style.use('fivethirtyeight')
 
-""" 
+"""
 Skrypt odczytujący dane z portu seryjnego
 Domyślnie ustawienia to:
 serial_port - COM3 (dla windows) - port szeregowy

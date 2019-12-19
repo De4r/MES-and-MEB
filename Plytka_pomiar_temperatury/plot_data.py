@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-import csv
 
-filename = '19-12-2019_10_22_24_LOGS_DS18B20_pomiar1.csv'
-# filename ='19-12-2019_11_07_39_LOGS_DS18B20_pomiar2.csv'
+
+# filename = '19-12-2019_10_22_24_LOGS_DS18B20_pomiar1.csv'
+filename = '19-12-2019_11_07_39_LOGS_DS18B20_pomiar2.csv'
 
 df = pd.read_csv(filename)
 
