@@ -4,6 +4,20 @@ import pandas as pd
 
 
 #################################################### 2 pomiar! ###########################################
+# Parametry:
+# T_ot = 22 [C]
+# Napięcie 8 [V]
+# Natęzenie: t[s] [A]
+# 0-100s 4
+# 100-140 3.9
+# 140-200 3.8
+# 200-250 3.7
+# 250-270 3.6
+# 270-440 3.5
+# 440-530 3.4
+# 530-750 3.35
+# 750-end 3.3
+
 filename = '19-12-2019_11_07_39_LOGS_DS18B20_pomiar2.csv'
 
 df = pd.read_csv(filename)
@@ -60,5 +74,5 @@ i = df.loc[df['Time'] > 300].index.values[0]
 print('Średnia rożnica temperatury modulu dla ustalonej pracy: ', round(df[df.columns[-1]][i:].mean(), 2))
 print('Średnia temperatura otoczenia podczas pomiaru: ', round(df['T_ot'].mean(), 2))
 # print(df.loc[0, df.columns[1:16]].to_numpy())
-print('Średnia temperatura plytki w chwilis startu podczas pomiaru: ', round(df.loc[0, df.columns[1:16]].mean(), 2))
+print('Średnia temperatura plytki w chwili startu podczas pomiaru: ', round(df.loc[0, df.columns[1:16]].mean(), 2))
 # filename = '19-12-2019_11_21_05_LOGS_DS18B20_chlodzenie.csv'

@@ -1,6 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+#################################################### 1 pomiar! ###########################################
+# Parametry:
+# T_ot = 22 [C]
+# Napięcie 6,2 [V]
+# Natęzenie: 3 [A], 2.6 [A] od 700 s
 
 filename = '19-12-2019_10_22_24_LOGS_DS18B20_pomiar1.csv'
 
@@ -79,4 +84,4 @@ i = df.loc[df_mean['Time'] > 400].index.values[0]
 print('Średnia rożnica temperatury modulu dla ustalonej pracy: ', round(df_mean[df_mean.columns[-1]][i:].mean(), 2))
 print('Średnia temperatura otoczenia podczas pomiaru: ', round(df[df.columns[-2]].mean(), 2))
 # print(df.loc[0, df.columns[1:16]].to_numpy())
-print('Średnia temperatura plytki w chwilis startu podczas pomiaru: ', round(df.loc[0, df.columns[1:16]].mean(), 2))
+print('Średnia temperatura plytki w chwili startu podczas pomiaru: ', round(df.loc[0, df.columns[1:16]].mean(), 2))
