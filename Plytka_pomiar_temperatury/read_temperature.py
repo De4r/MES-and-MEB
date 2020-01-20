@@ -12,8 +12,9 @@ style.use('fivethirtyeight')
 """
 Skrypt odczytujący dane z portu seryjnego
 Domyślnie ustawienia to:
-serial_port - COM3 (dla windows) - port szeregowy
-baud_rate - 9600 buad - predkość przesyłu danych
+serial_port - COM4 (dla windows) - port szeregowy
+baud_rate - 115200 buad - predkość przesyłu danych
+sen_num - liczba czujników +1 definuje kolumny
 Skrypt generuje plik csv z pomiarami z czujnikow
  """
 

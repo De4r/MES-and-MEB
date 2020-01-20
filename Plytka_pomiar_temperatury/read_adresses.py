@@ -5,7 +5,7 @@ import serial
 """
 Skrypt odczytujący dane z portu seryjnego
 Domyślnie ustawienia to:
-serial_port - COM3 (dla windows) - port szeregowy
+serial_port - COM5 (dla windows) - port szeregowy
 baud_rate - 9600 buad - predkość przesyłu danych (ta sama co ustawiona w skrypcie arduino)
 Skrypt generuje plik z adresami czujników DS18B20
  """

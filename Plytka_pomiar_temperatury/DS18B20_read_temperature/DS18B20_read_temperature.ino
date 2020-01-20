@@ -17,7 +17,7 @@ Adresy przechowywane w pamięci FLASH
 // rozdzielczosc - 9, 10, 11, 12 bit
 //const byte quality = 12;
 
-// Adresy czujników w pamięci FLASH
+// Adresy czujników w pamięci FLASH, w odp kolejnosci
 const byte address[SENSORS_NUM][8] PROGMEM = {
 0x28, 0xC9, 0x6D, 0x5D, 0x4, 0x0, 0x0, 0x31,
 0x28, 0xAD, 0xC2, 0x8D, 0x3, 0x0, 0x0, 0x9,
@@ -69,7 +69,6 @@ void loop() {
       }
       else{
         Serial.println(temperature, 4);
-      }
     }
     // Kolejne zapytanie o temperature
     sensors.request();
